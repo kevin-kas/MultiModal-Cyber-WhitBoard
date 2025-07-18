@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <title>Cyber Whiteboard</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a192f 0%, #172a45 50%, #1a3658 100%);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .cyber-particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #64ffda;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particle linear infinite;
+            box-shadow: 0 0 10px #64ffda;
+        }
+
+        @keyframes particle {
+            0% {
+                transform: translateY(-10vh) translateX(0);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) translateX(100vw);
+                opacity: 0;
+            }
+        }
+
+        .cyber-button {
+            background: rgba(10, 25, 47, 0.8);
+            border: 1px solid #64ffda;
+            color: #64ffda;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cyber-button:hover {
+            background: rgba(100, 255, 218, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
+        }
+
+        .cyber-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(100, 255, 218, 0.4),
+                    transparent
+                );
+            transition: 0.5s;
+        }
+
+        .canvas-container {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
+        }
+
+        .textbox {
+            background: rgba(10, 25, 47, 0.8);
+            border: 1px solid #64ffda;
+            color: #64ffda;
+            padding: 8px;
+            border-radius: 4px;
+            margin-top: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .quote-container {
+            width: 100%;
+            color: #64ffda;
+            margin-bottom: 10px;
+            min-height: 24px;
+            text-align: center;
+        }
+
+        /* 开始页面样式 */
+        .start-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 47, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #64ffda;
+            z-index: 100;
+            transition: opacity 0.5s ease;
+        }
+
+        .start-page h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .start-page button {
+            margin: 10px;
+        }
+
+        /* 定位播放器到右下角 */
+        .player-container {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 10;
+        }
+
+        /* 开始界面用户说明样式 */
+        .start-instruction {
+            background: rgba(10, 25, 47, 0.8);
+            border: 1px solid #64ffda;
+            color: #64ffda;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px;
+            max-width: 600px;
+            width: 90%;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+        }
+
+        .start-instruction.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        /* 修改后的公司名样式 - 左上角 */
+        .company-name {
+            position: fixed;
+            top: 10px;
+            left: 10px; /* 修改right为left */
+            color: #64ffda;
+            z-index: 100;
+            font-size: 20px;
+            font-weight: bold; /* 添加粗体效果 */
+            text-shadow: 0 0 5px rgba(100, 255, 218, 0.5); /* 添加发光效果 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="particle-container"></div>
+    <div class="start-page" id="startPage">
+        <h1>Cyber Whiteboard</h1>
+        <div class="start-instruction" id="startInstruction">
+            <h3>Readme</h3>
+            <p>This is a Cyber Whiteboard</p>
+            <p>Using requirement</p>
+            <ul>
+                <li>1.Use your mouse to draw on the White Board</li>
+                <li>2.Click "Get Value" to get the formula and claculation result of the graph of </li>
+                <li>3.Click "Get Line" to get the complex formula</li>
+                <li>4.Enter a number in the second blank and click"VAE Generate" or "DIF Generate" to generate the number</li>
+                <li>5.Click "clear board" to clear the board</li>
+            </ul>
+        </div>
+        <div class="flex space-x-4">
+            <button class="cyber-button py-2 px-4 rounded-sm font-mono" id="startButton">
+                <i class="fas fa-play mr-2"></i>Start
+            </button>
+            <button class="cyber-button py-2 px-4 rounded-sm font-mono" id="showInstructionButton">
+                <i class="fas fa-question-circle mr-2"></i> User Guideline
+            </button>
+        </div>
+    </div>
+    <div class="bg-black/80 p-8 rounded-xl relative z-10 space-y-6 backdrop-blur-md" id="mainContent" style="display: none;">
+        <div class="quote-container" id="quote-container"></div>
+        <div class="canvas-container">
+            <canvas id="myCanvas" width="1000" height="380"></canvas>
+        </div>
+        <div class="flex justify-center space-x-4">
+            <button class="cyber-button py-2 px-4 rounded-sm font-mono" id="getValueButton">
+                <i class="fas fa-eye mr-2"></i>Get Value
+            </button>
+            <button class="cyber-button py-2 px-4 rounded-sm font-mono" id="getLineButton">
+                <i class="fas fa-eye mr-2"></i>Get Line
+            </button>
+            <button class="cyber-button py-2 px-4 rounded-sm font-mono" id="vaeGenerateButton">
+                <i class="fas fa-rocket mr-2"></i>VAE Generate
+            </button>
+            <button class="cyber-button py-2 px-4 rounded-sm font-mono" id="difGenerateButton">
+                <i class="fas fa-rocket mr-2"></i>DIF Generate
+            </button>
+            <!-- 添加清空白板按钮 -->
+            <button class="cyber-button py-2 px-4 rounded-sm font-mono" id="clearCanvasButton">
+                <i class="fas fa-eraser mr-2"></i>clear board
+            </button>
+        </div>
+        <input type="text" id="textbox1" class="textbox" placeholder="Please Enter string 1">
+        <input type="text" id="textbox2" class="textbox" placeholder="Please Enter string 2">
+    </div>
+    <!-- 播放器容器 -->
+    <div class="player-container">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=2100332422&auto=1&height=66"></iframe>
+    </div>
+    <!-- 公司名元素 -->
+    <div class="company-name">∑ymΔig</div>
+    <script>
+        function createParticles() {
+            const container = document.getElementById('particle-container');
+            const particleCount = 50;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'cyber-particle';
+                const size = Math.random() * 2 + 1;
+                const left = Math.random() * window.innerWidth;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 5 + 3;
+                particle.style.cssText = `
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${left}px;
+                    animation: particle ${duration}s linear ${delay}s infinite;
+                `;
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 2;
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        function startDrawing(e) {
+            isDrawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        }
+
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mouseout', () => isDrawing = false);
+
+        function clearCanvas() {
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
+        const quoteContainer = document.getElementById('quote-container');
+        const quotes = [
+            'All that we see or seem is but a dream within a dream.—— Edgar Allan Poe',
+            'We loved with a love that was more than love.—— Edgar Allan Poe',
+            'The only way to get rid of a temptation is to yield to it.—— Oscar Wilde',
+            'I am no bird; and no net ensnares me.—— Charlotte Brontë',
+            'I am not afraid of storms, for I am learning how to sail my ship.—— Louisa May Alcott',
+        ];
+        let currentQuoteIndex = 0;
+        let currentCharacterIndex = 0;
+
+        function printQuote() {
+            const currentQuote = quotes[currentQuoteIndex];
+            if (currentCharacterIndex < currentQuote.length) {
+                quoteContainer.textContent += currentQuote[currentCharacterIndex];
+                currentCharacterIndex++;
+                setTimeout(printQuote, 100);
+            } else {
+                setTimeout(() => {
+                    quoteContainer.textContent = '';
+                    currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+                    currentCharacterIndex = 0;
+                    printQuote();
+                }, 2000);
+            }
+        }
+
+        printQuote();
+
+        document.getElementById('getValueButton').addEventListener('click', () => {
+            const canvasData = canvas.toDataURL('image/png');
+            fetch('/get_values', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ canvasData })
+            })
+              .then(response => response.json())
+              .then(data => {
+                    const textbox1 = document.getElementById('textbox1');
+                    const textbox2 = document.getElementById('textbox2');
+                    textbox1.value = data.value1;
+                    textbox2.value = data.value2;
+                });
+        });
+
+        document.getElementById('getLineButton').addEventListener('click', () => {
+            const canvasData = canvas.toDataURL('image/png');
+            fetch('/get_line', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ canvasData })
+            })
+              .then(response => response.json())
+              .then(data => {
+                    const textbox1 = document.getElementById('textbox1');
+                    const textbox2 = document.getElementById('textbox2');
+                    textbox1.value = data.value1;
+                    textbox2.value = data.value2;
+                });
+        });
+
+        document.getElementById('vaeGenerateButton').addEventListener('click', () => {
+            const textbox2 = document.getElementById('textbox2');
+            const textValue = textbox2.value;
+            fetch('/vae_generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ textValue })
+            })
+              .then(response => response.text())
+              .then(data => console.log(data));
+        });
+
+        document.getElementById('difGenerateButton').addEventListener('click', () => {
+            const textbox2 = document.getElementById('textbox2');
+            const textValue = textbox2.value;
+            fetch('/dif_generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ textValue })
+            })
+               .then(response => response.text())
+               .then(data => console.log(data));
+            });
+        document.getElementById('startButton').addEventListener('click', () => {
+            const startPage = document.getElementById('startPage');
+            const mainContent = document.getElementById('mainContent');
+
+            // 添加淡出效果
+            startPage.style.opacity = '0';
+            setTimeout(() => {
+                startPage.style.display = 'none';
+                mainContent.style.display = 'block';
+            }, 500);
+        });
+        document.getElementById('clearCanvasButton').addEventListener('click', clearCanvas);
+
+        // 开始界面用户说明按钮点击事件
+        document.getElementById('showInstructionButton').addEventListener('click', () => {
+            const instruction = document.getElementById('startInstruction');
+            instruction.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

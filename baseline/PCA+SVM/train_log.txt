@@ -1,0 +1,126 @@
+
+D:\myenvs\car\python.exe "D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py"
+正在加载训练数据...
+训练数据加载完成，共14080个样本
+正在加载测试数据...
+测试数据加载完成，共3520个样本
+特征维度从 2025 降到 1514
+开始超参数优化...
+Fitting 5 folds for each of 4 candidates, totalling 20 fits
+[CV] END .................................C=1, kernel=linear; total time=23.9min
+[CV] END .................................C=1, kernel=linear; total time=24.0min
+[CV] END ...............................C=0.1, kernel=linear; total time=24.0min
+[CV] END .................................C=1, kernel=linear; total time=24.0min
+[CV] END ...............................C=0.1, kernel=linear; total time=24.1min
+[CV] END ...............................C=0.1, kernel=linear; total time=24.3min
+[CV] END ...............................C=0.1, kernel=linear; total time=24.3min
+[CV] END ...............................C=0.1, kernel=linear; total time=24.3min
+[CV] END .................................C=1, kernel=linear; total time=24.3min
+[CV] END .................................C=1, kernel=linear; total time=24.3min
+[CV] END ....................................C=1, kernel=rbf; total time=40.7min
+[CV] END ....................................C=1, kernel=rbf; total time=30.1min
+[CV] END ....................................C=1, kernel=rbf; total time=30.2min
+[CV] END ....................................C=1, kernel=rbf; total time=30.4min
+[CV] END ..................................C=0.1, kernel=rbf; total time=54.6min
+[CV] END ....................................C=1, kernel=rbf; total time=30.6min
+[CV] END ..................................C=0.1, kernel=rbf; total time=54.6min
+[CV] END ..................................C=0.1, kernel=rbf; total time=54.8min
+[CV] END ..................................C=0.1, kernel=rbf; total time=54.9min
+[CV] END ..................................C=0.1, kernel=rbf; total time=54.9min
+最佳参数: {'C': 0.1, 'kernel': 'linear'}
+训练集准确率: 0.9999
+测试集准确率: 0.9131
+
+分类报告:
+              precision    recall  f1-score   support
+
+           (       0.94      0.94      0.94       160
+           )       0.89      0.99      0.94       160
+           +       0.82      0.82      0.82       160
+           -       0.96      0.99      0.98       160
+           0       0.93      0.91      0.92       160
+           1       0.79      0.81      0.80       160
+           2       0.88      0.81      0.84       160
+           3       0.87      0.84      0.85       160
+           4       0.81      0.81      0.81       160
+           5       0.87      0.87      0.87       160
+           6       0.94      0.92      0.93       160
+           7       0.91      0.89      0.90       160
+           8       0.93      0.89      0.91       160
+           9       0.96      0.88      0.92       160
+           =       0.85      0.94      0.89       160
+         cos       0.99      0.97      0.98       160
+         div       0.99      1.00      0.99       160
+         log       0.99      0.99      0.99       160
+          pi       0.91      0.96      0.94       160
+         sin       0.98      0.99      0.98       160
+        sqrt       0.95      0.97      0.96       160
+       times       0.95      0.91      0.93       160
+
+    accuracy                           0.91      3520
+   macro avg       0.91      0.91      0.91      3520
+weighted avg       0.91      0.91      0.91      3520
+
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:129: UserWarning: Glyph 39044 (\N{CJK UNIFIED IDEOGRAPH-9884}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:129: UserWarning: Glyph 27979 (\N{CJK UNIFIED IDEOGRAPH-6D4B}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:129: UserWarning: Glyph 31867 (\N{CJK UNIFIED IDEOGRAPH-7C7B}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:129: UserWarning: Glyph 21035 (\N{CJK UNIFIED IDEOGRAPH-522B}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:129: UserWarning: Glyph 30495 (\N{CJK UNIFIED IDEOGRAPH-771F}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:129: UserWarning: Glyph 23454 (\N{CJK UNIFIED IDEOGRAPH-5B9E}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:129: UserWarning: Glyph 28151 (\N{CJK UNIFIED IDEOGRAPH-6DF7}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:129: UserWarning: Glyph 28102 (\N{CJK UNIFIED IDEOGRAPH-6DC6}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:129: UserWarning: Glyph 30697 (\N{CJK UNIFIED IDEOGRAPH-77E9}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:129: UserWarning: Glyph 38453 (\N{CJK UNIFIED IDEOGRAPH-9635}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:130: UserWarning: Glyph 39044 (\N{CJK UNIFIED IDEOGRAPH-9884}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix_svm.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:130: UserWarning: Glyph 27979 (\N{CJK UNIFIED IDEOGRAPH-6D4B}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix_svm.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:130: UserWarning: Glyph 31867 (\N{CJK UNIFIED IDEOGRAPH-7C7B}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix_svm.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:130: UserWarning: Glyph 21035 (\N{CJK UNIFIED IDEOGRAPH-522B}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix_svm.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:130: UserWarning: Glyph 30495 (\N{CJK UNIFIED IDEOGRAPH-771F}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix_svm.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:130: UserWarning: Glyph 23454 (\N{CJK UNIFIED IDEOGRAPH-5B9E}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix_svm.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:130: UserWarning: Glyph 28151 (\N{CJK UNIFIED IDEOGRAPH-6DF7}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix_svm.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:130: UserWarning: Glyph 28102 (\N{CJK UNIFIED IDEOGRAPH-6DC6}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix_svm.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:130: UserWarning: Glyph 30697 (\N{CJK UNIFIED IDEOGRAPH-77E9}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix_svm.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:130: UserWarning: Glyph 38453 (\N{CJK UNIFIED IDEOGRAPH-9635}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix_svm.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:131: UserWarning: Glyph 30495 (\N{CJK UNIFIED IDEOGRAPH-771F}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:131: UserWarning: Glyph 23454 (\N{CJK UNIFIED IDEOGRAPH-5B9E}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:131: UserWarning: Glyph 31867 (\N{CJK UNIFIED IDEOGRAPH-7C7B}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:131: UserWarning: Glyph 21035 (\N{CJK UNIFIED IDEOGRAPH-522B}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:131: UserWarning: Glyph 28151 (\N{CJK UNIFIED IDEOGRAPH-6DF7}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:131: UserWarning: Glyph 28102 (\N{CJK UNIFIED IDEOGRAPH-6DC6}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:131: UserWarning: Glyph 30697 (\N{CJK UNIFIED IDEOGRAPH-77E9}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:131: UserWarning: Glyph 38453 (\N{CJK UNIFIED IDEOGRAPH-9635}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:131: UserWarning: Glyph 39044 (\N{CJK UNIFIED IDEOGRAPH-9884}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\PCA+SVM\SVM.py:131: UserWarning: Glyph 27979 (\N{CJK UNIFIED IDEOGRAPH-6D4B}) missing from font(s) DejaVu Sans.
+  plt.show()
+模型和预处理组件已保存
+
+进程已结束,退出代码0

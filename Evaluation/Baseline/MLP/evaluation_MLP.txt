@@ -1,0 +1,146 @@
+D:\myenvs\car\python.exe "D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py" 
+正在加载训练数据...
+训练数据加载完成，共14080个样本
+正在加载测试数据...
+测试数据加载完成，共3520个样本
+特征维度从 2025 降到 1514
+开始超参数优化...
+Fitting 5 folds for each of 6 candidates, totalling 30 fits
+[CV] END hidden_layer_sizes=(64, 32), learning_rate_init=0.001; total time=  22.3s
+[CV] END hidden_layer_sizes=(64, 32), learning_rate_init=0.001; total time=  31.5s
+[CV] END hidden_layer_sizes=(64, 32), learning_rate_init=0.001; total time=  39.3s
+[CV] END hidden_layer_sizes=(128, 64), learning_rate_init=0.001; total time=  43.6s
+[CV] END hidden_layer_sizes=(64, 32), learning_rate_init=0.001; total time=  47.2s
+[CV] END hidden_layer_sizes=(64, 32), learning_rate_init=0.0001; total time=  54.5s
+[CV] END hidden_layer_sizes=(128, 64), learning_rate_init=0.001; total time= 1.0min
+[CV] END hidden_layer_sizes=(128, 64), learning_rate_init=0.001; total time= 1.0min
+[CV] END hidden_layer_sizes=(64, 32), learning_rate_init=0.001; total time= 1.1min
+[CV] END hidden_layer_sizes=(128, 64), learning_rate_init=0.001; total time= 1.1min
+[CV] END hidden_layer_sizes=(128, 64), learning_rate_init=0.001; total time= 1.1min
+D:\myenvs\car\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py:691: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (100) reached and the optimization hasn't converged yet.
+  warnings.warn(
+[CV] END hidden_layer_sizes=(64, 32), learning_rate_init=0.0001; total time= 1.3min
+D:\myenvs\car\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py:691: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (100) reached and the optimization hasn't converged yet.
+  warnings.warn(
+[CV] END hidden_layer_sizes=(64, 32), learning_rate_init=0.0001; total time= 1.3min
+D:\myenvs\car\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py:691: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (100) reached and the optimization hasn't converged yet.
+  warnings.warn(
+[CV] END hidden_layer_sizes=(64, 32), learning_rate_init=0.0001; total time= 1.4min
+[CV] END hidden_layer_sizes=(64, 32), learning_rate_init=0.0001; total time= 1.4min
+[CV] END hidden_layer_sizes=(128, 64, 32), learning_rate_init=0.001; total time=  35.7s
+[CV] END hidden_layer_sizes=(128, 64, 32), learning_rate_init=0.001; total time=  48.8s
+[CV] END hidden_layer_sizes=(128, 64, 32), learning_rate_init=0.001; total time=  48.4s
+[CV] END hidden_layer_sizes=(128, 64, 32), learning_rate_init=0.001; total time= 1.1min
+[CV] END hidden_layer_sizes=(128, 64, 32), learning_rate_init=0.001; total time= 1.6min
+[CV] END hidden_layer_sizes=(128, 64), learning_rate_init=0.0001; total time= 2.1min
+[CV] END hidden_layer_sizes=(128, 64), learning_rate_init=0.0001; total time= 2.3min
+[CV] END hidden_layer_sizes=(128, 64), learning_rate_init=0.0001; total time= 2.9min
+[CV] END hidden_layer_sizes=(128, 64), learning_rate_init=0.0001; total time= 2.6min
+[CV] END hidden_layer_sizes=(128, 64, 32), learning_rate_init=0.0001; total time= 1.8min
+[CV] END hidden_layer_sizes=(128, 64), learning_rate_init=0.0001; total time= 2.5min
+[CV] END hidden_layer_sizes=(128, 64, 32), learning_rate_init=0.0001; total time= 1.9min
+[CV] END hidden_layer_sizes=(128, 64, 32), learning_rate_init=0.0001; total time= 2.0min
+D:\myenvs\car\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py:691: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (100) reached and the optimization hasn't converged yet.
+  warnings.warn(
+[CV] END hidden_layer_sizes=(128, 64, 32), learning_rate_init=0.0001; total time= 2.3min
+D:\myenvs\car\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py:691: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (100) reached and the optimization hasn't converged yet.
+  warnings.warn(
+[CV] END hidden_layer_sizes=(128, 64, 32), learning_rate_init=0.0001; total time= 2.3min
+最佳参数: {'hidden_layer_sizes': (128, 64), 'learning_rate_init': 0.001}
+训练集准确率: 0.9870
+测试集准确率: 0.8551
+
+分类报告:
+              precision    recall  f1-score   support
+
+           (       0.90      0.93      0.91       160
+           )       0.87      0.99      0.93       160
+           +       0.71      0.75      0.73       160
+           -       0.91      0.99      0.95       160
+           0       0.88      0.81      0.85       160
+           1       0.78      0.75      0.76       160
+           2       0.68      0.72      0.70       160
+           3       0.86      0.74      0.80       160
+           4       0.78      0.78      0.78       160
+           5       0.79      0.76      0.77       160
+           6       0.91      0.78      0.84       160
+           7       0.82      0.81      0.82       160
+           8       0.83      0.84      0.84       160
+           9       0.82      0.78      0.80       160
+           =       0.79      0.83      0.81       160
+         cos       0.96      0.92      0.94       160
+         div       0.96      0.94      0.95       160
+         log       0.98      0.97      0.97       160
+          pi       0.84      0.90      0.87       160
+         sin       0.93      0.96      0.94       160
+        sqrt       0.93      0.96      0.94       160
+       times       0.90      0.89      0.89       160
+
+    accuracy                           0.86      3520
+   macro avg       0.86      0.86      0.85      3520
+weighted avg       0.86      0.86      0.85      3520
+
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:130: UserWarning: Glyph 39044 (\N{CJK UNIFIED IDEOGRAPH-9884}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:130: UserWarning: Glyph 27979 (\N{CJK UNIFIED IDEOGRAPH-6D4B}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:130: UserWarning: Glyph 31867 (\N{CJK UNIFIED IDEOGRAPH-7C7B}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:130: UserWarning: Glyph 21035 (\N{CJK UNIFIED IDEOGRAPH-522B}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:130: UserWarning: Glyph 30495 (\N{CJK UNIFIED IDEOGRAPH-771F}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:130: UserWarning: Glyph 23454 (\N{CJK UNIFIED IDEOGRAPH-5B9E}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:130: UserWarning: Glyph 28151 (\N{CJK UNIFIED IDEOGRAPH-6DF7}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:130: UserWarning: Glyph 28102 (\N{CJK UNIFIED IDEOGRAPH-6DC6}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:130: UserWarning: Glyph 30697 (\N{CJK UNIFIED IDEOGRAPH-77E9}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:130: UserWarning: Glyph 38453 (\N{CJK UNIFIED IDEOGRAPH-9635}) missing from font(s) DejaVu Sans.
+  plt.tight_layout()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:131: UserWarning: Glyph 39044 (\N{CJK UNIFIED IDEOGRAPH-9884}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:131: UserWarning: Glyph 27979 (\N{CJK UNIFIED IDEOGRAPH-6D4B}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:131: UserWarning: Glyph 31867 (\N{CJK UNIFIED IDEOGRAPH-7C7B}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:131: UserWarning: Glyph 21035 (\N{CJK UNIFIED IDEOGRAPH-522B}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:131: UserWarning: Glyph 30495 (\N{CJK UNIFIED IDEOGRAPH-771F}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:131: UserWarning: Glyph 23454 (\N{CJK UNIFIED IDEOGRAPH-5B9E}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:131: UserWarning: Glyph 28151 (\N{CJK UNIFIED IDEOGRAPH-6DF7}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:131: UserWarning: Glyph 28102 (\N{CJK UNIFIED IDEOGRAPH-6DC6}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:131: UserWarning: Glyph 30697 (\N{CJK UNIFIED IDEOGRAPH-77E9}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:131: UserWarning: Glyph 38453 (\N{CJK UNIFIED IDEOGRAPH-9635}) missing from font(s) DejaVu Sans.
+  plt.savefig('confusion_matrix.png')
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:132: UserWarning: Glyph 30495 (\N{CJK UNIFIED IDEOGRAPH-771F}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:132: UserWarning: Glyph 23454 (\N{CJK UNIFIED IDEOGRAPH-5B9E}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:132: UserWarning: Glyph 31867 (\N{CJK UNIFIED IDEOGRAPH-7C7B}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:132: UserWarning: Glyph 21035 (\N{CJK UNIFIED IDEOGRAPH-522B}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:132: UserWarning: Glyph 28151 (\N{CJK UNIFIED IDEOGRAPH-6DF7}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:132: UserWarning: Glyph 28102 (\N{CJK UNIFIED IDEOGRAPH-6DC6}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:132: UserWarning: Glyph 30697 (\N{CJK UNIFIED IDEOGRAPH-77E9}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:132: UserWarning: Glyph 38453 (\N{CJK UNIFIED IDEOGRAPH-9635}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:132: UserWarning: Glyph 39044 (\N{CJK UNIFIED IDEOGRAPH-9884}) missing from font(s) DejaVu Sans.
+  plt.show()
+D:\uic 学习文件\机器学习Workshop\项目\Final Model\baseline\MLP.py:132: UserWarning: Glyph 27979 (\N{CJK UNIFIED IDEOGRAPH-6D4B}) missing from font(s) DejaVu Sans.
+  plt.show()
+模型和预处理组件已保存
+示例预测结果: 1
+
+进程已结束,退出代码0

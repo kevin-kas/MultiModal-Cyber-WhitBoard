@@ -1,0 +1,47 @@
+Training with timesteps=500, beta_schedule=linear
+Epoch :10,loss=6.653843479231
+Epoch :20,loss=6.183532948605716
+Epoch :30,loss=5.957456734962761
+Epoch :40,loss=5.9508233102969825
+Epoch :50,loss=5.801755401305854
+Epoch :60,loss=5.772053269669414
+Epoch :70,loss=5.671800950076431
+Epoch :80,loss=5.722260038368404
+Epoch :90,loss=5.66077054431662
+Epoch :100,loss=5.605487636290491
+Average loss for timesteps=500, beta_schedule=linear: 6.1607318571349605
+Training with timesteps=500, beta_schedule=cosine
+Epoch :10,loss=11.635805506259203
+Epoch :20,loss=11.06780525110662
+Epoch :30,loss=10.681044264696538
+Epoch :40,loss=10.67335182800889
+Epoch :50,loss=10.336464467458427
+Epoch :60,loss=10.396658298559487
+Epoch :70,loss=10.374300811439753
+Epoch :80,loss=10.273061222396791
+Epoch :90,loss=10.25558723974973
+Average loss for timesteps=500, beta_schedule=cosine: 10.336464467458427
+Training with timesteps=1000, beta_schedule=linear
+Epoch :10,loss=6.734434479381889
+Epoch :20,loss=6.211627202108502
+Epoch :30,loss=6.0016237064264715
+Epoch :40,loss=5.902787203900516
+Epoch :50,loss=5.829290619120002
+Epoch :60,loss=5.773665766231716
+Epoch :70,loss=5.797888023778796
+Epoch :80,loss=5.815682119689882
+Epoch :90,loss=5.675933055114001
+Epoch :100,loss=5.689571028575301
+Average loss for timesteps=1000, beta_schedule=linear: 6.181083388426341
+Training with timesteps=1000, beta_schedule=cosine
+Epoch :10,loss=11.688712244853377
+Epoch :20,loss=11.072949997149408
+Epoch :30,loss=10.702205868437886
+Epoch :40,loss=10.570068101398647
+Epoch :50,loss=10.409841047599912
+Epoch :60,loss=10.358653450384736
+Epoch :70,loss=10.436829917132854
+Epoch :80,loss=10.264622399583459
+Epoch :90,loss=10.316420920193195
+Epoch :100,loss=10.088788371533155
+Average loss for timesteps=1000, beta_schedule=cosine: 10.9861565668229
